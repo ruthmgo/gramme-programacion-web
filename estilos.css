@@ -1,0 +1,699 @@
+/* ===================================================
+   VARIABLES CSS - TEMA DE COLORES
+   =================================================== */
+:root {
+  --color-primario: #1e3a8a;
+  --color-secundario: #facc15;
+  --color-acento: #3b82f6;
+  --color-oscuro: #1f2937;
+  --color-claro: #f8fafc;
+  --color-blanco: #ffffff;
+  --color-gris: #6b7280;
+}
+
+/* ===================================================
+   RESET Y CONFIGURACIÓN BASE
+   =================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-oscuro);
+  background-color: var(--color-blanco);
+}
+
+/* ===================================================
+   COMPONENTES REUTILIZABLES - BOTONES
+   =================================================== */
+.boton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.boton-primario {
+  background-color: var(--color-secundario);
+  color: var(--color-oscuro);
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 2px solid var(--color-blanco);
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botones-llamada-accion {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===================================================
+   COMPONENTES REUTILIZABLES - TÍTULOS DE SECCIÓN
+   =================================================== */
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-primario);
+  position: relative;
+}
+
+.titulo-seccion::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-secundario), var(--color-acento));
+  border-radius: 2px;
+}
+
+/* ===================================================
+   LAYOUT PRINCIPAL - SECCIONES
+   =================================================== */
+.seccion {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================================================
+   ENCABEZADO Y NAVEGACIÓN
+   =================================================== */
+.encabezado {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+  color: var(--color-blanco);
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navegacion {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.navegacion img {
+  height: 70px;
+  width: 100px;
+}
+
+.menu-navegacion {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.menu-navegacion a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu-navegacion a:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-oscuro);
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   SECCIÓN PRINCIPAL - HERO
+   =================================================== */
+.seccion-principal {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 50%, #1e40af 100%);
+  background-size: cover;
+  background-position: center;
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 6rem 2rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+.seccion-principal h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seccion-principal p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* ===================================================
+   SECCIÓN ACERCA DE
+   =================================================== */
+.acerca-de {
+  background-color: var(--color-claro);
+}
+
+.contenido-acerca-de {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.texto-acerca-de {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-gris);
+}
+
+.texto-acerca-de p {
+  margin-bottom: 1.5rem;
+}
+
+.caracteristicas-acerca-de {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.caracteristica {
+  background: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.caracteristica:hover {
+  transform: translateY(-5px);
+}
+
+.icono-caracteristica {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===================================================
+   SECCIÓN SERVICIOS
+   =================================================== */
+.grilla-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tarjeta-servicio {
+  background: var(--color-blanco);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--color-secundario);
+  transition: all 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-servicio h3 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.lista-servicios {
+  list-style: none;
+}
+
+.lista-servicios li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.lista-servicios li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  color: var(--color-secundario);
+  font-weight: bold;
+}
+
+.lista-servicios li:last-child {
+  border-bottom: none;
+}
+
+/* ===================================================
+   SECCIÓN GALERÍA
+   =================================================== */
+.galeria h2 {
+  text-align: center;
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.imagenes img {
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  transition: transform 0.3s;
+}
+
+.imagenes img:hover {
+  transform: scale(1.1);
+}
+
+/* ===================================================
+   SLIDER DE IMÁGENES
+   =================================================== */
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider-contenedor {
+  display: flex;
+  width: 400%; /* 4 imágenes */
+  animation: desplazamiento 16s infinite;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===================================================
+   SECCIÓN BLOG
+   =================================================== */
+.blog {
+  background-color: var(--color-claro);
+}
+
+.grilla-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.tarjeta-blog {
+  background: var(--color-blanco);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-blog:hover {
+  transform: translateY(-5px);
+}
+
+.imagen-blog {
+  height: 200px;
+  background: linear-gradient(45deg, var(--color-primario), var(--color-acento));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+  font-size: 3rem;
+}
+
+.contenido-blog {
+  padding: 1.5rem;
+}
+
+.titulo-blog {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+.extracto-blog {
+  color: var(--color-gris);
+  line-height: 1.6;
+}
+
+.fecha-blog {
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* ===================================================
+   SECCIÓN TESTIMONIOS
+   =================================================== */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.testimonio-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.testimonio-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonio-card h3 {
+  color: var(--color-secundario);
+  margin-bottom: 0.5rem;
+}
+
+.testimonio-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.testimonio-card .servicio {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* ===================================================
+   MODAL DE TESTIMONIOS
+   =================================================== */
+.simple-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.simple-modal-content {
+  background: #1a1a2e;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  border: 2px solid var(--color-secundario);
+}
+
+.simple-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: var(--color-secundario);
+  cursor: pointer;
+}
+
+.simple-close-button:hover {
+  color: #f59e0b;
+}
+
+.modal-content h2 {
+  color: var(--color-secundario);
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modal-content .cliente-info {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-content .cliente-info strong {
+  color: var(--color-secundario);
+}
+
+/* ===================================================
+   SECCIÓN CONTACTO
+   =================================================== */
+.contacto {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+  color: var(--color-blanco);
+}
+
+.contacto .titulo-seccion {
+  color: var(--color-blanco);
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grupo-formulario {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-blanco);
+}
+
+.grupo-formulario input::placeholder,
+.grupo-formulario textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+}
+
+.fila-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ===================================================
+   PIE DE PÁGINA
+   =================================================== */
+.pie-pagina {
+  background-color: var(--color-oscuro);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 2rem;
+}
+
+.contenido-pie-pagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.seccion-pie-pagina h3 {
+  color: var(--color-secundario);
+  margin-bottom: 1rem;
+}
+
+.seccion-pie-pagina p,
+.seccion-pie-pagina a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.seccion-pie-pagina a:hover {
+  color: var(--color-secundario);
+}
+
+.derechos-autor {
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  color: var(--color-gris);
+}
+
+/* ===================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   =================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  animation: pulse 2s infinite;
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* ===================================================
+   ANIMACIONES
+   =================================================== */
+/* Animación del slider */
+@keyframes desplazamiento {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes aparecer-desde-abajo {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de pulso para WhatsApp */
+@keyframes pulse {
+  0% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.8); }
+  100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+}
+
+/* Aplicar animación de entrada a elementos */
+.tarjeta-servicio,
+.tarjeta-blog,
+.caracteristica {
+  animation: aparecer-desde-abajo 0.6s ease forwards;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   =================================================== */
+@media (max-width: 768px) {
+  /* Navegación móvil */
+  .menu-navegacion {
+    display: none;
+  }
+
+  /* Sección principal responsiva */
+  .seccion-principal h1 {
+    font-size: 2.5rem;
+  }
+
+  .seccion-principal p {
+    font-size: 1.2rem;
+  }
+
+  /* Contenido acerca de en una columna */
+  .contenido-acerca-de {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formulario en una columna */
+  .fila-formulario {
+    grid-template-columns: 1fr;
+  }
+
+  /* Botones en columna */
+  .botones-llamada-accion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Testimonios en una columna */
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Modal más pequeño */
+  .simple-modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
